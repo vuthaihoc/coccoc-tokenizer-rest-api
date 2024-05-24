@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  tokenizer:
+    image: vuthaihoc/coccoc-tokenizer:python
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "1880:8000"
+    volumes:
+      - ./app.py:/app/app.py
