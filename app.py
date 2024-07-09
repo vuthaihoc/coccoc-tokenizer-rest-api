@@ -13,9 +13,9 @@ def hello():
 	# return "HHHH"
 	return T.word_tokenize("xin chào, tôi là người Việt Nam", tokenize_option=0)
 
-@app.route('/tokenize')
+@app.route('/tokenize', methods = ['POST', 'GET'])
 def tokenize():
-	text = request.args['text']
+	text = request.values['text']
 	return T.word_tokenize(text, tokenize_option=0)
 
 if __name__ == '__main__':
